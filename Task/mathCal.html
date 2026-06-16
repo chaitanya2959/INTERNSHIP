@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Math Calculator</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+
+body{
+
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+
+}
+
+
+.calculator{
+
+    background:white;
+    width:350px;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px gray;
+
+}
+
+
+h1{
+
+    margin-bottom:20px;
+    color:#333;
+
+}
+
+
+input{
+
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid #aaa;
+    font-size:18px;
+
+}
+
+
+button{
+
+    width:45%;
+    padding:12px;
+    margin:5px;
+    border:none;
+    border-radius:10px;
+    background:#667eea;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    background:#764ba2;
+
+}
+
+
+#result{
+
+    margin-top:20px;
+    padding:15px;
+    background:#eee;
+    border-radius:10px;
+    font-size:22px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="calculator">
+
+<h1>🧮 Math Calculator</h1>
+
+
+<input type="number" id="num1" placeholder="Enter First Number">
+
+
+<input type="number" id="num2" placeholder="Enter Second Number">
+
+
+
+<button onclick="add()">+</button>
+
+<button onclick="sub()">-</button>
+
+<button onclick="mul()">×</button>
+
+<button onclick="div()">÷</button>
+
+<button onclick="square()">Square</button>
+
+
+
+<div id="result">
+Result
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+let result = document.getElementById("result");
+
+
+function add(){
+
+let a=Number(num1.value);
+let b=Number(num2.value);
+
+result.innerHTML="Addition = "+(a+b);
+
+}
+
+
+
+function sub(){
+
+let a=Number(num1.value);
+let b=Number(num2.value);
+
+result.innerHTML="Subtraction = "+(a-b);
+
+}
+
+
+
+function mul(){
+
+let a=Number(num1.value);
+let b=Number(num2.value);
+
+result.innerHTML="Multiplication = "+(a*b);
+
+}
+
+
+
+function div(){
+
+let a=Number(num1.value);
+let b=Number(num2.value);
+
+if(b==0){
+
+result.innerHTML="Cannot divide by zero";
+
+}
+
+else{
+
+result.innerHTML="Division = "+(a/b);
+
+}
+
+}
+
+
+
+function square(){
+
+let a=Number(num1.value);
+
+result.innerHTML="Square = "+(a*a);
+
+}
+
+
+</script>
+
+
+</body>
+</html>

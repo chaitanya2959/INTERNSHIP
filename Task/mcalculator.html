@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+
+<body>
+
+<h2>Simple Calculator</h2>
+
+<script>
+
+function calculator()
+{
+    let a = Number(prompt("Enter first number:"));
+    let b = Number(prompt("Enter second number:"));
+    let op = prompt("Enter operator (+, -, *, /):");
+
+    let result;
+
+    if(op == "+")
+    {
+        result = a + b;
+    }
+    else if(op == "-")
+    {
+        result = a - b;
+    }
+    else if(op == "*")
+    {
+        result = a * b;
+    }
+    else if(op == "/")
+    {
+        result = a / b;
+    }
+    else
+    {
+        result = "Invalid Operator";
+    }
+
+    document.write("Result: " + result);
+}
+
+calculator();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Products Store</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+header{
+    background:#ff6b35;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    margin:30px auto;
+}
+
+.product-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+    color:#333;
+}
+
+.price{
+    color:green;
+    font-size:20px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.rating{
+    color:orange;
+    font-weight:bold;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    background:#ff6b35;
+    color:white;
+    cursor:pointer;
+    margin-top:10px;
+    border-radius:5px;
+}
+
+button:hover{
+    background:#e85a2a;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🍔 Food Products Store</h1>
+    <p>Top 10 Delicious Food Items</p>
+</header>
+
+<div class="container">
+    <div class="product-container" id="products"></div>
+</div>
+
+<script>
+
+const products = [
+{
+    name:"Burger",
+    image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+    price:"₹120",
+    description:"Cheesy burger with fresh vegetables.",
+    rating:"4.5/5"
+},
+{
+    name:"Pizza",
+    image:"https://images.unsplash.com/photo-1513104890138-7c749659a591",
+    price:"₹299",
+    description:"Loaded with cheese and toppings.",
+    rating:"4.8/5"
+},
+{
+    name:"French Fries",
+    image:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877",
+    price:"₹99",
+    description:"Crispy golden french fries.",
+    rating:"4.3/5"
+},
+{
+    name:"Sandwich",
+    image:"https://images.unsplash.com/photo-1528735602780-2552fd46c7af",
+    price:"₹150",
+    description:"Healthy vegetable sandwich.",
+    rating:"4.4/5"
+},
+{
+    name:"Pasta",
+    image:"https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9",
+    price:"₹220",
+    description:"Creamy Italian pasta.",
+    rating:"4.6/5"
+},
+{
+    name:"Ice Cream",
+    image:"https://images.unsplash.com/photo-1563805042-7684c019e1cb",
+    price:"₹80",
+    description:"Chocolate flavored ice cream.",
+    rating:"4.7/5"
+},
+{
+    name:"Dosa",
+    image:"https://images.unsplash.com/photo-1668236543090-82eba5ee5976",
+    price:"₹100",
+    description:"South Indian crispy dosa.",
+    rating:"4.5/5"
+},
+{
+    name:"Paneer Tikka",
+    image:"https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8",
+    price:"₹250",
+    description:"Spicy grilled paneer cubes.",
+    rating:"4.8/5"
+},
+{
+    name:"Momos",
+    image:"https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec",
+    price:"₹140",
+    description:"Steamed veg momos with sauce.",
+    rating:"4.4/5"
+},
+{
+    name:"Chocolate Cake",
+    image:"https://images.unsplash.com/photo-1578985545062-69928b1d9587",
+    price:"₹350",
+    description:"Rich chocolate layered cake.",
+    rating:"4.9/5"
+}
+];
+
+const productContainer = document.getElementById("products");
+
+products.forEach(product => {
+
+    productContainer.innerHTML += `
+    
+    <div class="card">
+        <img src="${product.image}" alt="${product.name}">
+        
+        <div class="card-content">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            
+            <div class="price">${product.price}</div>
+            
+            <div class="rating">
+                ⭐ ${product.rating}
+            </div>
+
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    `;
+});
+
+</script>
+
+</body>
+</html>

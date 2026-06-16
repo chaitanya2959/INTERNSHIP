@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            color: blue;
+        }
+
+        input {
+            padding: 10px;
+            width: 90%;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: darkblue;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="box">
+
+    <h2>Age Calculator</h2>
+
+    <p>Select Your Date of Birth</p>
+
+    <input type="date" id="dob">
+
+    <br>
+
+    <button onclick="calculateAge()">Calculate Age</button>
+
+    <div id="result"></div>
+
+</div>
+
+
+<script>
+
+function calculateAge(){
+
+    let dob = document.getElementById("dob").value;
+
+    if(dob == ""){
+        document.getElementById("result").innerHTML = 
+        "Please select your date of birth";
+        return;
+    }
+
+
+    let birthDate = new Date(dob);
+    let today = new Date();
+
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+
+    let month = today.getMonth() - birthDate.getMonth();
+
+
+    if(month < 0 || 
+      (month === 0 && today.getDate() < birthDate.getDate()))
+    {
+        age--;
+    }
+
+
+    document.getElementById("result").innerHTML =
+    "Your Age is: " + age + " Years";
+
+}
+
+</script>
+
+
+</body>
+</html>

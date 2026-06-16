@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details Table</title>
+</head>
+<body>
+
+    <table border="1" id="studentTable">
+        <tr>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>City</th>
+        </tr>
+    </table>
+
+    <script>
+        // Array of 5 Student Objects
+        const students = [
+            {
+                name: "Chaitanya Lakade",
+                rollNo: 101,
+                age: 19,
+                course: "Computer Engineering",
+                city: "Baramati"
+            },
+            {
+                name: "Mangesh Sutar",
+                rollNo: 102,
+                age: 20,
+                course: "IT",
+                city: "Pune"
+            },
+            {
+                name: "Sneha Mane",
+                rollNo: 103,
+                age: 19,
+                course: "Computer Engineering",
+                city: "Nashik"
+            },
+            {
+                name: "Amit Shinde",
+                rollNo: 104,
+                age: 21,
+                course: "Mechanical",
+                city: "Nagpur"
+            },
+            {
+                name: "Priya Madukar",
+                rollNo: 105,
+                age: 20,
+                course: "Electronics",
+                city: "Thane"
+            }
+        ];
+
+        let table = document.getElementById("studentTable");
+
+        // Loop through students
+        for (let student of students) {
+            let row = table.insertRow();
+
+            row.insertCell(0).innerHTML = student.name;
+            row.insertCell(1).innerHTML = student.rollNo;
+            row.insertCell(2).innerHTML = student.age;
+            row.insertCell(3).innerHTML = student.course;
+            row.insertCell(4).innerHTML = student.city;
+        }
+    </script>
+
+</body>
+</html>
